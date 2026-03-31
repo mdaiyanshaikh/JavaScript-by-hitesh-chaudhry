@@ -50,3 +50,34 @@ let myFunction = function(){
 //You don’t need to declare the data type of a variable. 
 // The type is decided automatically at runtime, and it can even change later.
 
+// *****************************************************************************************
+
+// stack (primitive) heap (non-primitive)
+
+let myYoutubeName = "MohammadAiyandotcom"
+let anotherName = myYoutubeName
+//console.log(anotherName)
+
+anotherName = "mariaKhan"
+console.log(myYoutubeName)  // -> MohammadAiyandotcom
+console.log(anotherName) // ->  mariaKhan
+
+// now for non - primitive / heap
+
+let userOne = {
+    email: "mdaiyan12a@gmail.com",
+    upi: "user@yble"
+}
+
+let userTwo = userOne
+userTwo.email = "mariaKhan10a@gmail.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
+/* “JavaScript has two types:
+
+👉 Primitive (number, string, etc.) → copy is made
+So, changing one does NOT affect the other.
+
+👉 Non-primitive (object, array) → reference is shared
+So, changing one WILL affect the other.”*/
