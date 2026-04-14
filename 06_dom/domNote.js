@@ -57,3 +57,10 @@ return live HTMLCollections containing multiple elements.
 The difference is that getElementsByClassName selects elements by their class attribute, 
 while getElementsByTagName selects elements by their tag name like div, p, or button
 */
+
+/* 
+A NodeList is a collection of document nodes which includes text nodes, attribute nodes, and element nodes.
+ Line breaks and whitespace between HTML elements create text nodes in the NodeList. 
+ However, when using the children property, 
+ only element nodes are returned (line breaks are ignored)."
+ */

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Aiyan</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // here -> we have add values
+   function addLanguage(langName){
+    const li = document.createElement('li')
+    li.innerHTML = `${langName}`
+    document.querySelector('.language').appendChild(li)
+   }
+   addLanguage("Java")
+   addLanguage("python")
+// optimized way
+function addLangOptimizedWay(langName){
+    const li = document.createElement('li')  // Creates an empty <li> element in memory
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+}
+addLangOptimizedWay("typeScript")
+
+// here we want to edit values
+const secondLang = document.querySelector("li:nth-child(2)")
+// secondLang.innerHTML = "c++"
+// another optimized way of edit
+const newli = document.createElement('li')
+newli.textContent = "hey Maria"
+secondLang.replaceWith(newli)
+
+
+//  this is also a way of edit / replace calues
+const firstLang = document.querySelector("li:nth-child(1)")
+firstLang.innerHTML = "hey Aiyan"
+console.log(firstLang);
+
+// another way of removing
+const lastLang = document.querySelector("li:last-child")
+lastLang.remove()
+
+// edit through outerHTML
+const thirdLang = document.querySelector("li:nth-child(3)")
+thirdLang.outerHTML = '<li>arrival of third person</li>'
+
+   
+</script>
+</html>
