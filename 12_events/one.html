@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body>
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img  width="200px" id="photoshop" src="https://images.pexels.com/photos/21352847/pexels-photo-21352847.jpeg" alt="photoshop"></li>
+            <li><img width="200px" id="maria" src="https://images.pexels.com/photos/32838310/pexels-photo-32838310.jpeg" alt="maria"></li>
+            <li><img  width="200px" id="road" src="https://images.pexels.com/photos/34288352/pexels-photo-34288352.jpeg" alt=""></li>
+            <li><img width="200px" id="girl" src="https://images.pexels.com/photos/35696297/pexels-photo-35696297.jpeg" alt=""></li>
+        </ul><li><a id="google" href="https://google.com">google</a></li>
+        
+    </div>
+</body>
+<script>
+    // document.getElementById('girl').onclick = function(){
+    //     alert("girl image clicked")
+    // }
+
+    // best way 
+//    document.getElementById('photoshop').addEventListener('click',function(e){
+//     console.log("click inside url");
+//     e.stopPropagation(); // stops event from going to parent/child elements
+    
+//    },false)
+
+//    document.getElementById('road').addEventListener('click',function(e){
+//     console.log("road");
+    
+//    },false)
+   
+//    document.getElementById('google').addEventListener('click', function(e){
+//     console.log("clicked google");
+//     e.preventDefault()
+    
+//    })
+
+
+
+   // type , timestamp, defaultPrevented,target,toElement,srcElement
+   // clientX,clientY,screenX,screenY
+   // altkey, ctrlkey, shiftkey, keyCode
+
+   // attachEvent()
+   // jQuery
+
+   // true = Capturing -> Event goes from parent → child
+   // Outer elements run first 
+   // false = bubbling (child to parent)
+
+
+
+
+  document.querySelector('#images').addEventListener('click',function(e){
+    
+    
+    // console.log(e.target.parentNode);
+    // let removeIt = e.target.parentNode
+    // removeIt.remove()
+
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+        console.log(e.target.id);
+        let removeIt = e.target.parentNode
+        removeIt.remove()
+    }
+    
+    
+  })
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>
