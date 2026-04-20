@@ -1,2 +1,2 @@
-# JavaScript-by-hitesh-chaudhry
+# JavaScript basics - advance
 A code repo for Js series
