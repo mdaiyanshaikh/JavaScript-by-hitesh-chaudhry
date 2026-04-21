@@ -1,0 +1,77 @@
+// JS behavior
+JS is an asynchronous language, but its default behavior is synchronous. We have to force that behavior to be async. T
+he easiest example is your setTimeout or setInterval methods.
+
+// synchronous
+Synchronous (Blocking) Code: Code executes line by line. 
+If one task takes time (e.g., fetching data from an API), the entire browser freezes until it completes.
+
+// web API - found inside browser 
+// fetch() - high priority , returns a Promise
+
+// 
+        ┌──────────────────────────────┐
+        │          JS ENGINE           │
+        │                              │
+        │   Memory Heap                │
+        │   ┌──────────────┐           │
+        │   │              │           │
+        │   │              │           │
+        │   └──────────────┘           │
+        │                              │
+        │   Call Stack                 │
+        │   ┌──────────────┐           │
+        │   │    fn()      │           │
+        │   │    fn()      │           │
+        │   │   global()   │           │
+        │   └──────────────┘           │
+        └────────────┬─────────────────┘
+                     │
+                     │ call
+                     ▼
+
+        ┌──────────────────────────────┐
+        │           WEB API            │
+        │                              │
+        │   DOM API                    │
+        │   setTimeout()  ───────┐     │
+        │   setInterval()        │     │
+        │   fetch()  ───────┐    │     │
+        │                   │    │     │
+        │        Register Callback     │
+        └──────────┬─────────┬────────┘
+                   │         │
+                   │         │
+        (Promise)  │         │ (CB)
+                   ▼         ▼
+
+        ┌──────────────────────────────┐
+        │      MICROTASK QUEUE         │
+        │      [ CB ]   [ CB ]         │
+        └──────────────┬───────────────┘
+                       │
+                       │ High Priority
+                       ▼
+
+        ┌──────────────────────────────┐
+        │         TASK QUEUE           │
+        │      [ CB ]   [ CB ]         │
+        └──────────────┬───────────────┘
+                       │
+                       ▼
+
+                 ⚡ EVENT LOOP ⚡
+        (checks if Call Stack empty)
+
+                       │
+                       ▼
+
+        ┌──────────────────────────────┐
+        │        CALL STACK            │
+        │   (Add to Call Stack)        │
+        └──────────────────────────────┘
+
+
+
+ // setTimeout() ->  is a function that delays code execution    
+ // clearTimeout() -> is used to stop or cancel a timer that was set using setTimeout().  
