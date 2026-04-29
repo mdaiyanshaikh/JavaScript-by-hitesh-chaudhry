@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React</title>
+</head>
+<body>
+<button>click me</button>
+</body>
+<script>
+  class React {
+    constructor(){
+      this.library = "library"
+    this.server = "https://localhost:300"
+
+    // requirement
+    document.querySelector('button').addEventListener('click',this.handleClick.bind(this))
+    }
+    handleClick(){
+      console.log("button Clicked ");
+      
+      console.log(thi.server);
+      
+    }
+  }
+
+  const app = new React()
+</script>
+</html>
+
+/*
+bind : bind creates a copy of a function and permanently locks it to a specific this value, 
+so you can call it later.
+example
+
+const tv = {
+    brand: "Sony",
+    turnOn: function() {
+        console.log(`${this.brand} TV is ON`);
+    }
+}
+
+const remote = tv.turnOn;
+remote(); // ❌ 'this' is lost → "undefined TV is ON"
+
+// BIND creates a permanent remote for Sony TV
+const sonyRemote = tv.turnOn.bind(tv);
+sonyRemote(); // ✅ Works anytime! → "Sony TV is ON"
+
+*/
